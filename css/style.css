@@ -1,0 +1,399 @@
+/* ===== Resets and Housekeeping ===== */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+  font-size: 16px;
+margin: 0;
+		padding: 0.25em;
+}
+
+body{
+
+	background: #eeebe7;
+	padding: 100px 20px;
+	text-align: center;
+	margin: 0;
+	padding: 0.25em;
+
+}
+
+#form_1 label {
+    padding-right: 10px;
+    width:150px;
+    text-transform: uppercase;
+    display:inline-block
+}
+	
+	.form_class {
+		border: 1px solid #999;
+		padding: 0.25em;
+		background: #EEE;
+		
+
+	}
+	
+
+.maxl{
+  margin:25px ;
+  padding-right: 300px
+}
+.inline{
+  display: inline-block;
+}
+.inline + .inline{
+  margin-left:10px;
+}
+.radio{
+  color:#999;
+  font-size:15px;
+  position:relative;
+}
+.radio span{
+  position:relative;
+   padding-left:20px;
+}
+.radio span:after{
+  content:'';
+  width:15px;
+  height:15px;
+  border:3px solid;
+  position:absolute;
+  left:0;
+  top:1px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+  box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+.radio input[type="radio"]{
+   cursor: pointer; 
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+.radio input[type="radio"]:checked + span{
+  color:#428bca;  
+}
+.radio input[type="radio"]:checked + span:before{
+    content:'';
+  width:5px;
+  height:5px;
+  position:absolute;
+  background:#428bca;
+  left:5px;
+  top:6px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+}
+
+	.button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+	
+	/* essential */
+	label {
+		float: left;
+		width: 6em;
+		text-align: right;
+		padding-right: 0.5em;
+	}
+	
+	input, textarea {
+		text-align: left;
+		width: 20em;
+	}
+	
+	input.submit {
+		margin-left: 6.5em;
+		width: auto;
+	}
+	
+	/* additionally give the button and the labels
+	the same font to align the button better */
+	
+	label, input.submit {
+		font: normal 0.8em Verdana, Geneva, Arial, Helvetica, sans-serif;
+	}
+
+
+.span_class {
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  padding-right: 10px;
+  color: #838e95;
+
+}
+
+.span_class1 {
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding-left: 200px
+ 
+}
+
+.span_class2 {
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding-left: 150px
+ 
+}
+
+.span_class3 {
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding-right: 60px
+ 
+}
+
+.span_class4 {
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding-right: 30px
+ 
+}
+
+.div_class {
+  font-family: 'Quicksand';
+  font-size: 2em;
+  color: #OOO;
+  font-weight:bold
+}
+
+
+.multiselect {
+    width:20em;
+    height:15em;
+    border:solid 1px #c0c0c0;
+    overflow:auto;
+}
+ 
+.multiselect label {
+    display:block;
+}
+ 
+.multiselect-on {
+    color:#ffffff;
+    background-color:#000099;
+}
+
+/* ===== Actual Styles ===== */
+
+/* ===== Horizontal Rule ===== */
+.rule {
+  margin: 6px 0;
+  border: none;
+  height: 1.5px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+  background-image: linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+}
+
+/* ===== Select Box ===== */
+.sel {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 2em 2em;
+  width: 350px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.sel::before {
+  position: absolute;
+  content: '\f063';
+  font-family: 'FontAwesome';
+  font-size: 1.5em;
+  color: #FFF;
+  right: 20px;
+  top: calc(50% - 0.5em);
+}
+
+.sel.active::before {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.sel__placeholder {
+  display: block;
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding: 0.2em 0.5em;
+  text-align: left;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  visibility: visible;
+}
+
+.sel.active .sel__placeholder {
+  visibility: hidden;
+}
+
+.sel__placeholder::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.2em 0.5em;
+  content: attr(data-placeholder);
+  visibility: hidden;
+}
+
+.sel.active .sel__placeholder::before {
+  visibility: visible;
+}
+
+.sel__box {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -4px;
+  display: none;
+  list-style-type: none;
+  text-align: left;
+  font-size: 1em;
+  background-color: #FFF;
+  width: calc(100% + 8px);
+  box-sizing: border-box;
+}
+
+.sel.active .sel__box {
+  display: block;
+  -webkit-animation: fadeInUp 500ms;
+          animation: fadeInUp 500ms;
+}
+
+.sel__box__options {
+  display: list-item;
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding: 0.5em 1em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.sel__box__options::after {
+  content: '\f00c';
+  font-family: 'FontAwesome';
+  font-size: 0.5em;
+  margin-left: 5px;
+  display: none;
+}
+
+.sel__box__options.selected::after {
+  display: inline;
+}
+
+.sel__box__options:hover {
+  background-color: #ebedef;
+}
+
+/* ----- Select Box Black Panther ----- */
+.sel {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.sel--black-panther {
+  z-index: 3;
+}
+
+/* ----- Select Box Superman ----- */
+.sel--superman {
+/*   display: none; */
+  z-index: 2;
+}
+
+/* ===== Keyframes ===== */
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
