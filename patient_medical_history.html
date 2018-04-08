@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Select-Boxes</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato|Quicksand'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/checkbox.css">
+
+<link data-require="jqueryui@*" data-semver="1.10.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+    <script data-require="jqueryui@*" data-semver="1.10.0" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
+    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+  <!--  <link rel="stylesheet" href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.css" /> 
+    <link rel="stylesheet" href="css/clockpicker-12-hour-option.css" /> -->
+ 	
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+ <!--   
+  <script>
+	$(function() {
+		$(".input-12-hour-icon-button").button({
+			icons: {
+				primary: ".ui-icon-clock"
+		},
+			text: false
+		})
+	});
+  </script>
+
+-->
+  <style>
+    div.justified {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+  </head>
+  
+</head>
+
+<body class="body1">
+  <form id="form_1" action="ServletPDF_HTML_PAGE" method="GET">  
+
+    <div>
+     <span style="font-size: 25px"><font color="#688ac1">Patient Id: </font> </span> &nbsp;&nbsp;&nbsp;
+     <input type="text" id ="patient_id" name="patient_id" style="color: #a04646; " required> 
+     <!--<span style="font-size: 25px" > <font color="#a04646">Niharikae</font> </span> &nbsp;&nbsp;&nbsp; -->
+   </div>
+<span class="span_class"> Select the conditions that apply </span>
+<div class="sel sel--black-panther">
+  <select  id="select_condition" name="select_condition" onchange="changeCondition()">
+    <option value="" disabled>Select a Condition</option>
+    <option value="Backpain">Backpain</option>
+    <option value="Thyphoid">Thyphoid</option>
+    <option value="Diabetes">Diabetes</option>
+    <option value="Migrane">Migrane</option>
+    <option value="General">General</option>
+  </select>
+  
+ 
+</div>
+
+<br> <br> 
+<!--  
+ <select name="fruit">
+<option value="fruit1">Mango</option>
+<option value="fruit2">Banana</option>
+<option value="fruit3">Grape</option>
+<option value="fruit4">Apple</option>
+</select>
+-->
+
+
+<!-- https://lokesh-coder.github.io/pretty-checkbox/ -->
+
+
+    <span class="span_class1">Symptoms</span> &nbsp;&nbsp;&nbsp;
+			
+
+    <div class="pretty p-default">
+        <input type="checkbox" name="symp" value ="0" />
+        <div class="state p-primary radio inline"">
+            <label id="symptom1" name ="symptom1">Symptom1</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default">
+        <input type="checkbox" name="symp" value ="1"/>
+        <div class="state p-primary radio inline"">
+            <label id="symptom2" name="symptom2">Symptom2</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default">
+        <input type="checkbox" name="symp" value ="2"/>
+        <div class="state p-primary radio inline"">
+            <label id="symptom3" name="symptom3">Symptom3</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default">
+        <input type="checkbox" name="symp" value ="3"/>
+        <div class="state p-primary radio inline"">
+            <label id="symptom4" name="symptom4">Symptom4</label>
+        </div>
+    </div>
+
+    <div class="pretty p-default">
+        <input type="checkbox" name="symp" value ="4"/>
+        <div class="state p-primary radio inline">
+            <label id="symptom5" name="symptom5">Symptom5</label>
+        </div>
+    </div>
+	
+    <br> <br> <br>
+
+   
+
+ <div class="maxl">
+  <span class="span_class3">Do you consume Tobacco/Alchohol? </span> &nbsp;&nbsp;&nbsp;
+  <span class="radio inline"> 
+      <input type="radio" name="tobacco" value="Yes" id= "yes_tob" checked>
+      <span> Yes </span> 
+   </span>
+  <span class="radio inline"> 
+      <input type="radio" name="tobacco" value="No" id="no_tob" >
+      <span>No </span> 
+  </span>
+</div>
+<br>
+<div class="maxl">
+  <span></span> &nbsp;&nbsp;
+
+  <span class="span_class4"> Are you taking any Medication </span> &nbsp;&nbsp;&nbsp;
+  <span class="radio inline" value="medicine"> 
+      <input type="radio" name="Medication" value="Yes" id= "yes_med" checked onclick="showMedication();" >
+      <span> Yes </span> 
+   </span>
+  <span class="radio inline"> 
+      <input type="radio" name="Medication" value="No" id="no_med" onclick="closeMedication();">
+      <span>No </span> 
+  </span>
+
+</div>
+
+
+<div class="justified">
+<textarea id="medications" name = "text_medication" style="float:center;"> </textarea>
+
+</div>
+
+
+<div class="maxl">
+  <span class="span_class3"> Do you have any alergies? </span> &nbsp;&nbsp;&nbsp;
+
+  <span class="radio inline"> 
+      <input type="radio" name="alergies" value="Yes" id= "yes_alg" checked onclick="showAlergies();" >
+      <span> Yes </span> 
+   </span>
+  <span class="radio inline"> 
+      <input type="radio" name="alergies" value="No" id="no_alg" onclick="closeAlergies();">
+      <span>No </span> 
+  </span>
+
+</div>
+
+
+<div class="justified" >
+  
+<textarea id="alergies" name = "text_alergies"> </textarea>
+
+</div>
+
+
+   <div class="maxl">
+  <span class="span_class2"> Do you consume Alchohol? </span> &nbsp;&nbsp;&nbsp;
+  <span class="radio inline"> 
+      <input type="radio" name="Alchohol" value="Yes_alc" id= "yes_alc" checked >
+      <span> Yes </span> 
+   </span>
+  <span class="radio inline"> 
+      <input type="radio" name="Alchohol" value="Week_alc" id="week_alc">
+      <span>Weekly</span> 
+  </span>
+
+
+  <span class="radio inline"> 
+      <input type="radio" name="Alchohol" value="Month_alc" id="month_alc">
+      <span>Monthly</span> 
+  </span>
+
+  <span class="radio inline"> 
+      <input type="radio" name="Alchohol" value="No_alc" id="no_alc">
+      <span>Never </span> 
+  </span>
+
+</div>
+  
+  
+
+	<br> <br> <br>
+	  <div>
+
+		<input type="submit" value = "Send"  class="button_class button1">
+	</div>
+
+</form>
+
+
+
+
+<!--  <form action="Myservlet2">
+	<input type="submit" value = "Send"  class="button_class button1">
+</form>
+-->
+     <script src="js/index.js"></script> 
+
+<script>
+
+$('.sel__box__options').click(function() { // onchange attribute
+  var txt = $(this).text();
+  var index = $(this).index();
+  //alert("hey");
+  //$(symptom1).html("niharika");
+  $(this).siblings('.sel__box__options').removeClass('selected');
+  $(this).addClass('selected');
+  
+  var $currentSel = $(this).closest('.sel');
+  $currentSel.children('.sel__placeholder').text(txt);
+  $currentSel.children('select').prop('selectedIndex', index + 1);
+  
+  var sel_ = $('#select_condition :selected').text();
+  //alert($sel_);
+   
+  if(sel_ == "Backpain"){
+	/*$(symptom1).html("Lower back pain");
+	$(symptom2).html("Inability to stand");
+	$(symptom3).html("Unable to bend");
+	$(symptom4).html("Unable to walk");
+	$(symptom5).html("Others");	
+	*/
+	
+	  document.getElementById('symptom1').innerHTML = 'Lower back pain';
+	  document.getElementById('symptom2').innerHTML = 'Inability to stand';
+	  document.getElementById('symptom3').innerHTML = 'Unable to bend';
+	  document.getElementById('symptom4').innerHTML = 'Unable to walk';
+	  document.getElementById('symptom5').innerHTML = 'Difficulty to sit';
+
+	}
+
+  if(sel_ == "Thyphoid"){
+	$(symptom1).html("Muscle pain");
+	$(symptom2).html("Rashes");
+	$(symptom3).html("Fever");
+	$(symptom4).html("Nausea");
+	$(symptom5).html("Loss of appetite");	
+	}
+
+  if(sel_ == "Diabetes"){
+  $(symptom1).html("Sudden weightloss");
+  $(symptom2).html("Always thirsty");
+  $(symptom3).html("Heavy breathing");
+  $(symptom4).html("Slow healing cuts");
+  $(symptom5).html("Nausea"); 
+  }
+
+  if(sel_ == "Migrane"){
+  $(symptom1).html("TenderScalp");
+  $(symptom2).html("Mild Headache");
+  $(symptom3).html("Depressed?");
+  $(symptom4).html("Dizziness");
+  $(symptom5).html("Nasal congestion"); 
+  }
+
+
+  if(sel_ == "General"){
+  $(symptom1).html("Head ache");
+  $(symptom2).html("Fever");
+  $(symptom3).html("Cold");
+  $(symptom4).html("Cough");
+  $(symptom5).html("Body pains"); 
+  }
+
+});
+
+</script>
+
+<script type="text/javascript">
+  function showMedication(){
+    document.getElementById('medications').style.display ='block';
+  }
+
+  function closeMedication(){
+    document.getElementById('medications').style.display ='none';
+  }
+
+  function showAlergies(){
+     document.getElementById('alergies').style.display ='block';
+  }
+
+  function closeAlergies(){
+     document.getElementById('alergies').style.display ='none';
+  }
+</script>
+</body>
+</html>
